@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste Analista de Sistemas</title>
+</head>
+<body>
+    <label>Insira os Brackets e clique em OK para verificar:</label>
+    <input type="text" name="txt-brackets" id="inputString">
+    <input type="button" name="btn-Ok" id="btnOk" value="Ok" onclick="avaliaBracket()">
+</body>
+
+<script>
+    function avaliaBracket(){
+        let string = document.getElementById("inputString").value;
+        let arrayString = string.split('');
+
+        let metadeDoTamanho = arrayString.length/2;
+        let metade1 = arrayString.slice(0, metadeDoTamanho);
+        let metade2 = arrayString.slice(metadeDoTamanho, arrayString.length);
+        let metade3 = metade2.reverse();
+        // alert(metade1 +','+ metade2);
+        // alert(metade2);
+    
+        if (arrayString.length % 2 != 0)
+            {alert('Brackets Desbalenceados')
+        }
+
+        else {
+            let par1 = ["(",")"];
+            let par2 = ["[","]"];
+            let par3 = ["{","}"];
+            let i = 1;            
+            let resultado = [];
+            alert('metade3 '+metade3)
+            while (i <= arrayString.length){
+                let a = 0;
+                let novaArray = [].concat(metade1[a], metade2[a]);
+                alert('novaArray= '+novaArray);
+                if (par1 = novaArray){
+                    resultado.push(true);
+                    alert('midira');
+                    a=+1;
+                }
+                if (par2 = novaArray){
+                    resultado.push(true);
+                    alert('muita midira');
+                    a=+1;
+                }
+                if (par3 = novaArray){
+                    resultado.push(true);
+                    alert('midirissima');
+                    a=+1;
+                }
+                else {
+                    resultado.push(false);
+                }
+                i++;
+            }
+            alert(resultado);
+            i++;
+        }
+    }
+    
+</script>
+</html>
